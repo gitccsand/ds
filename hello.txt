@@ -1,3 +1,4 @@
 hello git!
 hello git world!
 morning!
+added in master branch!
