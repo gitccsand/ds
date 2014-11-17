@@ -1,0 +1,16 @@
+hello world!
+hello git!
+<<<<<<< HEAD
+good morning lg1
+=======
+good morning lg
+<<<<<<< HEAD
+2014011004
+=======
+>>>>>>> 0934cce7598124dbe80f50fc46895bf18fbbde2e
+hahshadf lg1
+<<<<<<< HEAD
+20141104 lg1
+=======
+>>>>>>> bf051b332731cc961d14ef532104764f784e788b
+>>>>>>> 27dd23dc294721afd6af7a4ff08fd85e5fba2893
