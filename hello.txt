@@ -1,5 +1,0 @@
-hello git!
-hello git world!
-morning!
-added in master branch!
-added in dev branch!
