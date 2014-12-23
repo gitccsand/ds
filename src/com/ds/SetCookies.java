@@ -29,6 +29,7 @@ public class SetCookies extends HttpServlet {
 					StringUtils.filterHtml(username));
 			// cookie的有效期为1个月
 			cookie1.setMaxAge(24 * 60 * 60 * 30);
+			//httponly 设置为true
 			cookie1.setHttpOnly(true);
 			SimpleDateFormat sdf = new SimpleDateFormat("yyyy-MM-dd");
 			Cookie cookie2 = new Cookie("lastTime", sdf.format(new Date()));
