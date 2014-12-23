@@ -39,11 +39,11 @@ cookie value from javascript<br>
 <p>
 <script type="text/javascript">
     document.write("cookie username: ",getCookieValue("username"),"<br>");
-    document.write("cookie username: ",getCookieValue("lastTime"),"<br>");
+    document.write("cookie lastTime: ",getCookieValue("lastTime"),"<br>");
     if (document.cookie=="") {
         document.write("no cookie");
     } else {       
-        document.write("cookie content","<br>");
+        document.write("cookie content:","<br>");
         document.write(document.cookie,"<br>");
     }
  
