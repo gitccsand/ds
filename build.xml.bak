@@ -1,4 +1,4 @@
-
+<<<<<<< HEAD
 <project name="HadoopCookbook" basedir=".">
 	<description>
         simple example build file
@@ -105,7 +105,7 @@
 	</target>
 
 </project>
-
+=======
 <project basedir="." default="deploy" name="ds">  
         <property name="project.name" value="ds"/>  
         <property name="src.dir" value="${basedir}/src"/>  
@@ -311,4 +311,5 @@
 
      
     
-</project>
+</project>  
+>>>>>>> e6b797800ca5951c05ad6ec008954e2342b7cdda
