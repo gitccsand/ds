@@ -16,5 +16,10 @@
 <fullyQualifiedTypeName name="sun.net.www.http.HttpClient"/>
 <fullyQualifiedTypeName name="com.sun.net.httpserver.spi.HttpServerProvider"/>
 <fullyQualifiedTypeName name="java.io.ByteArrayOutputStream"/>
+<fullyQualifiedTypeName name="sun.misc.BASE64Encoder"/>
+<fullyQualifiedTypeName name="sun.misc.BASE64Decoder"/>
+<fullyQualifiedTypeName name="com.tcp.testService.SayHelloSrv"/>
+<fullyQualifiedTypeName name="com.tcp.testService.SayHelloSrvImpl"/>
 <fullyQualifiedTypeName name="java.security.Key"/>
+<fullyQualifiedTypeName name="java.security.Signature"/>
 </qualifiedTypeNameHistroy>
