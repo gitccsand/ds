@@ -1,0 +1,197 @@
+<project basedir="." default="deploy" name="ds">  
+        <property name="project.name" value="ds"/>  
+        <property name="src.dir" value="${basedir}/src"/>  
+        <property name="build.dir" value="${basedir}/build"/>  
+        <property name="war.dest.dir" value="${basedir}/war"/>  
+        <property name="web.dir" value="${basedir}/WebContent"/>  
+        <property name="web-inf.dir" value="${web.dir}/WEB-INF"/>  
+        <property name="web.lib.dir" value="${web-inf.dir}/lib"/>  
+        <property name="web.classes.dir" value="${web-inf.dir}/classes"/>  
+        <property name="tomcat.home" value="F:\lhw\2014\ds\apache-tomcat-8.0.15"/>  
+        <property name="tomcat.lib.home" value="${tomcat.home}/lib"/>  
+        <property name="tomcat.webapp.home" value="${tomcat.home}/webapps"/>  
+        <property name="webapp.dir" value="${tomcat.webapp.home}/${project.name}"/>  
+        <property name="webapp.web-inf.dir" value="${tomcat.webapp.home}/${project.name}/WEB-INF"/>  
+        <property name="webapp.classes.dir" value="${tomcat.webapp.home}/${project.name}/WEB-INF/classes"/>  
+    	
+          
+        <!--property name="packages" value="ant.*"/>
+        <property name="build.src" value="${basedir}/AntBuild/${project.name}/src"></property>  
+        <property name="build.dest" value="${basedir}/AntBuild/${project.name}/WEB-INF/classes"/>  
+        <property name="buildwar.dest" value="${basedir}/AntBuild/${project.name}"/>  
+        <property name="build.javadocs" value="${basedir}/AntBuild/doc"/>  
+        <property name="jar.dest" value="${basedir}/AntBuild/jar"/>  
+        <property name="war.dest" value="${basedir}/AntBuild/war"/-->  
+          
+        <!--property name="j2eelib.dir" value="D:\Program Files\MyEclipse 6.5\myeclipse\eclipse\plugins\com.genuitec.eclipse.j2eedt.core_6.5.0.zmyeclipse650200806\data\libraryset\EE_5"/-->  
+          
+        <path id="classpath">  
+            <!--fileset dir="${j2eelib.dir}">  
+                <include name="**/*.jar"/>  
+            </fileset-->  
+            <fileset dir="${web.lib.dir}">  
+                <include name="**/*.jar"/>  
+            </fileset>  
+            <fileset dir="${tomcat.lib.home}">  
+                <include name="**/*.jar"/>  
+                <include name="*.jar"/>  
+            </fileset>  
+        </path>      	
+    	
+    	<echo message="The project name is: ${project.name}"/>
+    	<echo message="The base dir is: ${basedir}"/>
+    	<echo message="The base dir is: ${webapp.classes.dir}"/>
+	
+    <target name="init" description="设置初始化打 war 包需要的路径变量">  
+    	
+        <mkdir dir="${war.dest.dir}"/>  
+        <mkdir dir="${web.classes.dir}"/>  
+        <mkdir dir="${webapp.dir}"/>  
+        <mkdir dir="${webapp.web-inf.dir}"/>  
+        <mkdir dir="${webapp.classes.dir}"/>  
+    	
+    </target>  
+      
+    <target name="prepare" depends="init" description="创建打包需要的路径，拷贝源文件到打包路径下">  
+    	
+    	<delete includeemptydirs="true">
+			<fileset dir="${build.dir}" >
+			    <include name="**/*"/>
+			    <exclude name="exclude"/>
+			</fileset>
+    		<fileset dir="${web.classes.dir}">
+			    <include name="**/*"/>
+    		    <exclude name="exclude"/>
+    		</fileset>
+    		<fileset dir="${webapp.dir}/WEB-INF/classes">
+			    <include name="**/*"/>
+    		    <exclude name="exlclude"/>
+    		</fileset>    		
+		</delete>
+
+        <!--mkdir dir="${build.src}"/>  
+        <mkdir dir="${build.dest}"/>  
+        <mkdir dir="${buildwar.dest}"/>  
+        <mkdir dir="${jar.dest}"/>  
+        <mkdir dir="${war.dest}"/>  
+        <copy todir="${build.src}">  
+            <fileset dir="${src}"/>  
+        </copy>  
+        <copy todir="${buildwar.dest}">  
+            <fileset dir="${webapp}"/>  
+        </copy-->  
+    </target>  
+      
+    <target name="build" depends="prepare" description="编译 java 文件，拷贝 properties 属性配置文件到编译后的路径下">  
+        <javac srcdir="${src.dir}" destdir="${build.dir}" includejavaruntime="true" includeantruntime="false">  
+            <classpath refid="classpath"/>  
+        </javac>  
+        <copy todir="${web.classes.dir}">  
+            <fileset dir="${build.dir}">  
+                <include name="**/*"/>  
+            </fileset>  
+        </copy>  
+    </target>  
+	
+	<target name="deploy" depends="build,clean"> 
+		
+		<copy todir="${webapp.dir}" includeemptydirs="true">
+
+				    <fileset dir="${web.dir}">
+				    	<include name="**/*"/>
+				    	</fileset>
+					
+				    <!--filterset>
+
+				      <filter token="TITLE" value="Foo Bar"/>
+
+				    </filterset-->
+
+		</copy>
+		
+		<!--copy todir="${tomcat.home.webapp}">
+
+		    <fileset dir="${webdir}"/>
+
+		    <filterset>
+
+		      <filter token="TITLE" value="Foo Bar"/>
+
+		    </filterset>
+
+		</copy-->
+	</target>
+      
+	<target name="deployclasses" depends="build"> 
+		
+		<copy todir="${webapp.dir}" includeemptydirs="true">
+
+				    <fileset dir="${web.dir}">
+				    	<include name="**/*.class"/>
+				    	</fileset>
+					
+				    <!--filterset>
+
+				      <filter token="TITLE" value="Foo Bar"/>
+
+				    </filterset-->
+
+		</copy>
+	</target>
+	<target name="deploypages" depends="init"> 
+		
+		<copy todir="${webapp.dir}" includeemptydirs="true">
+
+				    <fileset dir="${web.dir}">
+				    	<include name="**/*.jsp"/>
+				    	<include name="**/*.html"/>
+				    	<include name="**/*.xml"/>
+				    	</fileset>
+					
+				    <!--filterset>
+
+				      <filter token="TITLE" value="Foo Bar"/>
+
+				    </filterset-->
+
+		</copy>
+	</target>
+	
+    <target name="antwar" depends="build,clean" description="打 war 包，不将 java 文件打入包内">  
+        <!--delete dir="${build.src}"/-->  
+        <war warfile="${war.dest.dir}/${project.name}.war" webxml="${web-inf.dir}/web.xml">  
+        <!--war warfile="${war.dest.dir}/${project.name}.war" needxmlfile='false'-->  
+            <lib dir="${web.lib.dir}"/>  
+            <lib dir="${tomcat.lib.home}"/>  
+            <classes dir="${web.classes.dir}"/>  
+            <fileset dir="${web.dir}"/>  
+        </war>  
+    </target>  
+      
+    <target name="publish" depends="antwar" description="发布 war 包至 tomcat 目录下">  
+        <copy todir="${tomcat.home}/webapps">  
+            <fileset dir="${war.dest.dir}">  
+                <include name="**/*.war"/>  
+            </fileset>  
+        </copy>  
+    </target>  
+      
+    <target name="javadoc" depends="build" description="生成 java 的 API 帮助文档">  
+        <mkdir dir="${build.javadocs}"/>  
+        <javadoc packagenames="${packages}" sourcepath="${build.src}" destdir="${build.javadocs}" author="true" version="true" use="true" splitindex="true" windowtitle="${name} API" doctitle="${name}">  
+            <classpath refid="classpath"/>  
+        </javadoc>  
+    </target>  
+      
+    <target name="clean" depends="init" description="清除打包用临时文件">  
+        <!--delete dir="${tomcat.webapp.home}"/-->  
+        <delete includeemptydirs="true">  
+            <fileset dir="${war.dest.dir}" includes="${project.name}.war" />  
+            <fileset dir="${webapp.dir}" includes="**/*"/>  
+            <fileset dir="${tomcat.webapp.home}" includes="${project.name}.war" />  
+        </delete>  
+    </target>  
+
+     
+    
+</project>  

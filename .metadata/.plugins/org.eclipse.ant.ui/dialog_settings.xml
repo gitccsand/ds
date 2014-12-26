@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<section name="Workbench">
+	<item value="0" key="ant.properties.block.property.sortColumn"/>
+	<item value="false" key="AntPropertiesFileSelectionDialog.showAll"/>
+	<item value="0" key="org.eclipse.ant.ui.ant_types_page_context.sortColumn"/>
+	<item value="105" key="org.eclipse.ant.ui.ant_types_page_context.columnWidth3"/>
+	<item value="106" key="org.eclipse.ant.ui.ant_types_page_context.columnWidth2"/>
+	<item value="1024" key="org.eclipse.ant.ui.ant_types_page_context.sortDirection"/>
+	<item value="111" key="org.eclipse.ant.ui.ant_types_page_context.columnWidth1"/>
+	<item value="0" key="org.eclipse.ant.ui.ant_tasks_page_context.sortColumn"/>
+	<item value="F:\lhw\2014\ds\apache-ant-1.9.4" key="org.eclipse.ant.ui.lastanthome"/>
+	<item value="1024" key="ant.properties.block.property.sortDirection"/>
+	<item value="137" key="ant.properties.block.property.columnWidth2"/>
+	<item value="159" key="org.eclipse.ant.ui.ant_types_page_context.columnWidth0"/>
+	<item value="106" key="org.eclipse.ant.ui.ant_tasks_page_context.columnWidth1"/>
+	<item value="154" key="org.eclipse.ant.ui.ant_tasks_page_context.columnWidth0"/>
+	<item value="138" key="ant.properties.block.property.columnWidth0"/>
+	<item value="102" key="org.eclipse.ant.ui.ant_tasks_page_context.columnWidth3"/>
+	<item value="184" key="ant.properties.block.property.columnWidth1"/>
+	<item value="1024" key="org.eclipse.ant.ui.ant_tasks_page_context.sortDirection"/>
+	<item value="102" key="org.eclipse.ant.ui.ant_tasks_page_context.columnWidth2"/>
+	<section name="org.eclipse.ant.internal.ui.views.AntView">
+		<item value="&lt;?xml version=&quot;1.0&quot; encoding=&quot;UTF-8&quot;?&gt;&#x0D;&#x0A;&lt;antView&gt;&#x0D;&#x0A;&lt;project default=&quot;deploy&quot; error=&quot;false&quot; name=&quot;ds&quot; path=&quot;/ds/build.xml&quot;/&gt;&#x0D;&#x0A;&lt;filterInternalTargets value=&quot;false&quot;/&gt;&#x0D;&#x0A;&lt;/antView&gt;" key="memento"/>
+	</section>
+</section>

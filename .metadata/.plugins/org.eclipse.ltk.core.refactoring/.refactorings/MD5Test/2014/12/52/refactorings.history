@@ -1,0 +1,4 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<session version="1.0">
+<refactoring comment="Rename type &apos;testrsa.RSAUtils&apos; to &apos;RSATest&apos;&#x0D;&#x0A;- Original project: &apos;MD5Test&apos;&#x0D;&#x0A;- Original element: &apos;testrsa.RSAUtils&apos;&#x0D;&#x0A;- Renamed element: &apos;testrsa.RSATest&apos;&#x0D;&#x0A;- Update references to refactored element&#x0D;&#x0A;- Update textual occurrences in comments and strings" description="Rename type &apos;RSAUtils&apos;" flags="589830" id="org.eclipse.jdt.ui.rename.type" input="/src&lt;testrsa{RSAUtils.java[RSAUtils" matchStrategy="1" name="RSATest" qualified="false" references="true" similarDeclarations="false" stamp="1419559857500" textual="false" version="1.0"/>
+</session>

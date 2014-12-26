@@ -1,0 +1,58 @@
+package com.ds;
+
+public class TestHttpOnly extends HttpServlet {
+050
+     
+051
+    public void doGet(HttpServletRequest request, HttpServletResponse response)
+052
+               throws ServletException, IOException {
+053
+              doPost(request, response);
+054
+             }
+055
+     
+056
+    public void doPost(HttpServletRequest request, HttpServletResponse response)
+057
+               throws ServletException, IOException {
+058
+              response.setContentType("text/html;charset=UTF-8");
+059
+               
+060
+            //获取所有的cookie值
+061
+              Cookie[] cookies = request.getCookies();
+062
+              Cookie cookie = null;
+063
+              for (int i = 0; i < cookies.length; i++) {
+064
+               cookie = cookies[i];
+065
+               if (cookie.getName().equals("username")) {
+066
+                request.getSession().setAttribute("username", cookie.getValue());
+067
+               }
+068
+               if (cookie.getName().equals("lastTime")) {
+069
+                request.getSession().setAttribute("lastTime", cookie.getValue());
+070
+               }
+071
+              }
+072
+               
+073
+              response.sendRedirect("TestHttpOnly.jsp");
+074
+             }
+075
+ 
+076
+}
+

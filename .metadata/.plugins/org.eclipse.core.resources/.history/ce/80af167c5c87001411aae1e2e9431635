@@ -1,0 +1,7 @@
+package com.ds;
+
+import javax.servlet.http.HttpServlet;
+
+public class GetCookies extends HttpServlet {
+
+}
